@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="{{ metaDescription[0] }}"
+    />
+    <title>{{ articleTitle[0] }}</title>
+
+    <script
+      src="https://kit.fontawesome.com/496c202c64.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+
+    <!-- font families -->
+    <style>
+      /* devanagari */
+      @font-face {
+        font-family: "Pragati Narrow";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/pragatinarrow/v13/vm8vdRf0T0bS1ffgsPB7WZ-mD275wNJHMw.woff2)
+          format("woff2");
+        unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D,
+          U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Pragati Narrow";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/pragatinarrow/v13/vm8vdRf0T0bS1ffgsPB7WZ-mD272wNJHMw.woff2)
+          format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "Pragati Narrow";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/pragatinarrow/v13/vm8vdRf0T0bS1ffgsPB7WZ-mD274wNI.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* devanagari */
+      @font-face {
+        font-family: "Pragati Narrow";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/pragatinarrow/v13/vm8sdRf0T0bS1ffgsPB7WZ-mD2ZD5cd5EpIjlg.woff2)
+          format("woff2");
+        unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D,
+          U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Pragati Narrow";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/pragatinarrow/v13/vm8sdRf0T0bS1ffgsPB7WZ-mD2ZD5cd2EpIjlg.woff2)
+          format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "Pragati Narrow";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/pragatinarrow/v13/vm8sdRf0T0bS1ffgsPB7WZ-mD2ZD5cd4EpI.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* cyrillic-ext */
+      @font-face {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/rubik/v23/iJWKBXyIfDnIV7nMrXyi0A.woff2)
+          format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+          U+A640-A69F, U+FE2E-FE2F;
+      }
+      /* cyrillic */
+      @font-face {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/rubik/v23/iJWKBXyIfDnIV7nFrXyi0A.woff2)
+          format("woff2");
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      /* hebrew */
+      @font-face {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/rubik/v23/iJWKBXyIfDnIV7nDrXyi0A.woff2)
+          format("woff2");
+        unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/rubik/v23/iJWKBXyIfDnIV7nPrXyi0A.woff2)
+          format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/rubik/v23/iJWKBXyIfDnIV7nBrXw.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* cyrillic-ext */
+      @font-face {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/rubik/v23/iJWKBXyIfDnIV7nMrXyi0A.woff2)
+          format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+          U+A640-A69F, U+FE2E-FE2F;
+      }
+      /* cyrillic */
+      @font-face {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/rubik/v23/iJWKBXyIfDnIV7nFrXyi0A.woff2)
+          format("woff2");
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      /* hebrew */
+      @font-face {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/rubik/v23/iJWKBXyIfDnIV7nDrXyi0A.woff2)
+          format("woff2");
+        unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/rubik/v23/iJWKBXyIfDnIV7nPrXyi0A.woff2)
+          format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/rubik/v23/iJWKBXyIfDnIV7nBrXw.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+    </style>
+
+    <!-- general style -->
+    <style>
+      :root {
+        --e-global-typography-primary-font-family: "Pragati Narrow";
+        --e-global-typography-text-font-family: "Rubik";
+        --text-color: #47474d;
+        --icon-size: 20px;
+        --icon-padding: 0.6em;
+      }
+      * {
+        font-family: var(--e-global-typography-text-font-family), sans-serif;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        text-decoration: none;
+        outline: none;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+        font: inherit;
+      }
+    </style>
+
+    <!-- header-style -->
+    <style>
+      header {
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo-container {
+        min-width: 30%;
+        padding: 20px;
+      }
+      .logo-container img {
+        width: 400px;
+        max-width: 100%;
+        height: 100%;
+      }
+      nav {
+        padding: 20px;
+      }
+      nav .menu-toggler {
+        display: none;
+      }
+      nav ol {
+        text-align: center;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: right;
+        align-items: flex-start;
+        gap: 10px;
+        margin: 0 0 20px;
+        padding: 0;
+      }
+      .menu-list-item {
+        margin-inline: 0 10px;
+        padding: 0 10px;
+      }
+      .menu-item {
+        font-family: var(--e-global-typography-primary-font-family), sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        cursor: pointer;
+        position: relative;
+        color: white;
+        line-height: 26px;
+        letter-spacing: 1.2px;
+        transition: color 500ms;
+      }
+      .selected-header-menu,
+      .menu-item:hover {
+        color: #6ac389;
+      }
+      .selected-header-menu::after,
+      .menu-item:hover::after {
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        content: "";
+        background-color: #6ac389;
+      }
+      nav .menu-toggler {
+        display: none;
+        width: 50px;
+        padding: 7px;
+        cursor: pointer;
+        background-color: transparent;
+        outline: none;
+        border: none;
+      }
+      nav .menu-toggler-line {
+        width: 75%;
+        margin-left: 25%;
+        border-top: 2px solid #6ac389;
+        margin-bottom: 5px;
+      }
+      nav .menu-toggler-line:nth-child(even) {
+        margin-inline: 0 25%;
+      }
+      nav .menu-toggler:hover .menu-toggler-line,
+      nav .menu-toggler:focus .menu-toggler-line,
+      nav .menu-toggler:active .menu-toggler-line {
+        border-color: #fea350;
+      }
+      header .mobile-menu ul {
+        background-color: #fff;
+        margin: 10px auto;
+        padding: 0;
+        width: 94%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 0px;
+        transition: height 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+        overflow: hidden;
+        z-index: 100;
+      }
+      header .mobile-menu ul li {
+        color: #6ac389;
+        list-style: none;
+        text-align: right;
+        padding: 10px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #e8e8e8;
+        cursor: pointer;
+      }
+      header .mobile-menu ul li:hover,
+      header .mobile-menu ul .selected-mobile-menu {
+        background-color: #6ac389;
+        color: #fff;
+        border-bottom: 1px solid #fff;
+      }
+      header .mobile-menu ul a {
+        letter-spacing: 1.2px;
+        line-height: 26px;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: "Pragati Narrow", sans-serif !important;
+      }
+    </style>
+
+    <!-- content style -->
+    <style>
+      section {
+        margin: 50px auto 85px;
+        max-width: 1200px;
+        padding: 20px;
+      }
+      section > h1 {
+        font-family: var(--e-global-typography-text-font-family), sans-serif !important;
+        font-size: 52px;
+        margin: 0 0 20px 0;
+        line-height: 1.5em;
+        font-weight: 600;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #6ac3ad;
+      }
+      .categories__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 15px;
+        row-gap: 30px;
+      }
+      .article__img-wrapper {
+        position: relative;
+        width: 100%;
+        cursor: pointer;
+      }
+      .article__img-wrapper img {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      .article__img-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        transition: all 0.6s;
+      }
+      .article__img-layer:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+      }
+      .article__img-layer a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .article__content {
+        padding: 30px;
+        border: 1px solid #e8e8e8;
+      }
+      .article__title {
+        color: #222;
+        font-size: 26px;
+        text-transform: uppercase;
+        line-height: 1.2em;
+        margin-bottom: 5px;
+      }
+      .article__title:hover {
+        color: #54595f;
+      }
+      .article__date {
+        line-height: 1.5em;
+        color: #999;
+        font-size: 14px;
+      }
+      .article__description {
+        color: #555;
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: 1.5em;
+      }
+      .article__button {
+        margin-top: 15px;
+      }
+      .article__button button {
+        outline: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid #6ac3ad;
+        color: #6ac3ad;
+        transition: all 0.5s;
+        font-weight: 700;
+        padding: 6px 15px;
+        font-size: 14px;
+        line-height: 1.5em;
+      }
+      .article__button button:hover {
+        background-color: #fea350;
+        border-color: #fea350;
+        color: #fff;
+      }
+    </style>
+
+    <!-- footer style -->
+    <style>
+      footer {
+        background-color: #1a1a1a;
+      }
+      .main-footer {
+        max-width: 1200px;
+        padding: 50px 20px 20px;
+        margin: auto;
+      }
+      .footer-logo-container {
+        display: flex;
+        color: #fff;
+      }
+      .footer-logo-container img {
+        max-width: 100%;
+        height: 100%;
+      }
+      .footer-logo-container .footer-logo {
+        padding: 30px 30px 30px 0;
+        min-width: 40%;
+      }
+      .footer-logo-container .footer-logo-text {
+        min-width: 60%;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .main-footer .social {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+      .main-footer .social a {
+        text-decoration: none;
+      }
+      .main-footer .social-icon-wrapper {
+        width: 44px;
+        height: 44px;
+        background-color: #6ac389;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .main-footer .social-icon-wrapper:hover {
+        background-color: #fea350;
+      }
+      .main-footer .fab {
+        color: #fff;
+        width: fit-content;
+        height: fit-content;
+        font-size: 20px;
+        line-height: 20px;
+        font-family: "Font Awesome 5 Brands";
+      }
+      .main-footer .fa-facebook::before {
+        content: "\f09a";
+      }
+      .main-footer .fa-instagram::before {
+        content: "\f16d";
+      }
+
+      .main-footer .divider {
+        padding: 5px 0;
+        margin-bottom: 20px;
+      }
+      .main-footer .divider span {
+        display: flex;
+        border-top: 2px dotted #47474d;
+        width: 100%;
+      }
+
+      .footer-navbar {
+        margin-bottom: 20px;
+      }
+      .footer-navbar ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        /* gap: 20px; */
+      }
+      .footer-navbar li {
+        padding: 15px 7px;
+        margin-inline: 10px;
+      }
+      .footer-navbar li:last-child {
+        margin-right: 0;
+      }
+      .footer-navbar li:first-child {
+        margin-left: 0;
+      }
+      .footer-navbar a {
+        color: #ccc;
+        text-transform: uppercase;
+        font: 700 18px "Pragati Narrow", sans-serif;
+        letter-spacing: 1.2px;
+        cursor: pointer;
+        position: relative;
+        transition: color 500ms;
+      }
+      .selected-footer-menu,
+      .footer-navbar a:hover {
+        color: #fea350 !important;
+      }
+      .selected-footer-menu::after,
+      .footer-navbar a:hover::after {
+        display: block !important;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        content: "";
+        background-color: #fea350;
+      }
+      .footer-message {
+        color: #ccc;
+        font-size: 14px;
+      }
+      .copyright {
+        color: #aeaeae;
+        background-color: #232222;
+        padding: 20px 10px;
+        text-align: center;
+        font-size: 11px;
+        font-family: "Rubik", sans-serif;
+      }
+    </style>
+
+    <!-- responsive styles -->
+    <style>
+      @media screen and (max-width: 1024px) and (min-width: 768px) {
+        .logo-container {
+          min-width: 40%;
+        }
+        header nav ol {
+          justify-content: center;
+        }
+
+        section > h1 {
+          font-size: 20px;
+        }
+        .categories__wrapper {
+          grid-template-columns: repeat(1, 1fr);
+          row-gap: 30px;
+        }
+
+        footer .main-footer {
+          padding-block: 70px;
+        }
+      }
+      @media (max-width: 768px) {
+        .logo-container {
+          width: 75%;
+        }
+        nav {
+          padding-right: 10px;
+        }
+        nav ol {
+          display: none;
+        }
+        nav .menu-toggler {
+          display: block;
+        }
+        header .mobile-menu ul {
+          z-index: 9;
+        }
+
+        section > h1 {
+          font-size: 20px;
+        }
+        .categories__wrapper {
+          grid-template-columns: repeat(1, 1fr);
+          row-gap: 30px;
+        }
+
+        footer .main-footer {
+          padding-block: 70px;
+        }
+        footer .footer-logo-container {
+          display: block;
+        }
+        footer .footer-logo-container a {
+          max-width: 100%;
+        }
+        footer .social {
+          justify-content: center;
+        }
+        footer .main-footer .social-icon-wrapper {
+          width: 55px;
+          height: 55px;
+        }
+        footer .main-footer .fab {
+          width: fit-content;
+          height: fit-content;
+          font-size: 25px;
+          line-height: 25px;
+        }
+        footer .footer-navbar ul {
+          justify-content: center;
+        }
+        footer .footer-navbar li {
+          padding: 5px 7px !important;
+        }
+        .footer-message {
+          font-size: 16px !important;
+          text-align: center;
+        }
+        footer .copyright {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <a href="/">
+          <img
+            width="800"
+            height="102"
+            alt="MoneyHawk logo"
+            class="attachment-full size-full wp-image-631 lazyloaded"
+            src="https://x.moneyhawk.com/img/MoneyHawk-logo_white-600x76.webp"
+            sizes="(max-width: 800px) 100vw, 800px"
+          /><noscript
+            ><img
+              width="800"
+              height="102"
+              src="https://x.moneyhawk.com/img/MoneyHawk-logo_white-600x76.webp"
+              class="attachment-full size-full wp-image-631"
+              alt="MoneyHawk logo"
+              sizes="(max-width: 800px) 100vw, 800px"
+          /></noscript>
+        </a>
+      </div>
+      <nav>
+        <ol>
+          <li class="menu-list-item">
+            <a
+              href="/category/grow-your-savings/"
+              class="menu-item {% if articleTitle[0]|lower == 'grow your savings' %}selected-header-menu{% endif %}"
+              >GROW YOUR SAVINGS</a
+            >
+          </li>
+          <li class="menu-list-item">
+            <a
+              href="/category/making-money/"
+              class="menu-item {% if articleTitle[0]|lower == 'making money' %}selected-header-menu{% endif %}"
+              >MAKING MONEY</a
+            >
+          </li>
+          <li class="menu-list-item">
+            <a
+              href="/category/personal-finance/"
+              class="menu-item {% if articleTitle[0]|lower == 'personal finance' %}selected-header-menu{% endif %}"
+              >PERSONAL FINANCE</a
+            >
+          </li>
+          <li class="menu-list-item">
+            <a
+              href="/category/smart-money-hacks/"
+              class="menu-item {% if articleTitle[0]|lower == 'smart money hacks' %}selected-header-menu{% endif %}"
+              >SMART MONEY HACKS</a
+            >
+          </li>
+          <li class="menu-list-item">
+            <a
+              href="/category/news/"
+              class="menu-item {% if articleTitle[0]|lower == 'news' %}selected-header-menu{% endif %}"
+              >NEWS</a
+            >
+          </li>
+        </ol>
+
+        <!-- <button type="button" class="menu-toggler"> -->
+        <div class="menu-toggler" id="menu-toggler">
+          <div class="menu-toggler-line"></div>
+          <div class="menu-toggler-line"></div>
+          <div class="menu-toggler-line"></div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+          <ul style="height: 0px">
+            <li {% if articleTitle[0]|lower == 'grow your savings' %}class="selected-mobile-menu"{% endif %}>
+              <a href="/category/grow-your-savings/">GROW YOUR SAVINGS</a>
+            </li>
+            <li {% if articleTitle[0]|lower == 'making money' %}class="selected-mobile-menu"{% endif %}>
+              <a href="/category/making-money/">MAKING MONEY</a>
+            </li>
+            <li {% if articleTitle[0]|lower == 'personal finance' %}class="selected-mobile-menu"{% endif %}>
+              <a href="/category/personal-finance/">PERSONAL FINANCE</a>
+            </li>
+            <li {% if articleTitle[0]|lower == 'smart money hacks' %}class="selected-mobile-menu"{% endif %}>
+              <a href="/category/smart-money-hacks/">SMART MONEY HACKS</a>
+            </li>
+            <li><a href="contact/">contact</a></li>
+            <li><a href="about/">about</a></li>
+            <li><a href="privacy-policy/">privacy policy</a></li>
+            <li><a href="terms-of-service/">terms of service</a></li>
+            <li><a href="/rss">RSS</a></li>
+          </ul>          
+        </div>
+      </nav>
+    </header>
+    <section>
+      <h1>{{ articleTitle[0] }}</h1>
+      <div class="categories__wrapper">
+        {% for article in latestArticles %}
+          <div class="article__card">
+            <div class="article__img-wrapper">
+              <img
+                width="1200"
+                height="686"
+                alt="{{ article.imgAlt }}"
+                class="wpr-anim-timing-ease-default lazyloaded"
+                src="{{ article.img }}"
+              />
+              <div class="article__img-layer">
+                <a href="{{ article.url }}"></a>
+              </div>
+            </div>
+            <div class="article__content">
+              <div class="article__title">
+                <a href="{{ article.url }}">{{ article.title }}</a>
+              </div>
+              <div class="article__date">{{ article.date }}</div>
+              <div class="article__button">
+                <a href="{{ article.url }}"><button type="button">read more</button></a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+    <footer>
+      <div class="main-footer">
+        <div class="footer-logo-container">
+          <div class="footer-logo">
+            <a href="/">
+              <img
+                width="800"
+                height="102"
+                alt="MoneyHawk logo"
+                class="attachment-full size-full wp-image-631 lazyloaded"
+                src="https://x.moneyhawk.com/img/MoneyHawk-logo_white-600x76.webp"
+                sizes="(max-width: 800px) 100vw, 800px"
+              /><noscript
+                ><img
+                  width="800"
+                  height="102"
+                  src="https://x.moneyhawk.com/img/MoneyHawk-logo_white-600x76.webp"
+                  class="attachment-full size-full wp-image-631"
+                  alt="MoneyHawk logo"
+                  sizes="(max-width: 800px) 100vw, 800px"
+              /></noscript>
+            </a>
+          </div>
+          <div class="footer-logo-text">
+            One-stop solution to find the latest market trends and insights,
+            global industry news, financial hacks and saving tips.
+          </div>
+        </div>
+        <div class="social">
+          <a
+            href="https://www.facebook.com/moneyhawk"
+            target="_blank"
+            aria-label="Facebook"
+          >
+            <div class="social-icon-wrapper">
+              <i class="fab fa-facebook"></i>
+            </div>
+          </a>
+          <a
+            href="https://www.instagram.com/moneyhawkofficial/"
+            target="_blank"
+            aria-label="instagram"
+          >
+            <div class="social-icon-wrapper">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </a>
+        </div>
+        <div class="divider"><span></span></div>
+        <div class="footer-navbar">
+          <ul>
+            <li><a href="/contact">contact</a></li>
+            <li><a href="/about">about</a></li>
+            <li>
+              <a href="/privacy-policy">privacy policy</a>
+            </li>
+            <li><a href="/terms-of-service">terms of service</a></li>
+            <li><a href="/rss">RSS</a></li>
+          </ul>
+        </div>
+        <p class="footer-message">
+          Money Hawk is reader-supported. We may receive compensation from the
+          products and services mentioned in our articles, but the options are
+          the author’s own. Compensation may impact where offers appear. We have
+          not included all available products or offers.
+        </p>
+      </div>
+      <div class="copyright">&copy; 2023 Money Hawk. All rights reserved.</div>
+    </footer>
+    <script>
+      document.querySelector("#menu-toggler").addEventListener("click", () => {
+        const mobileMenuStyle = document.querySelector("#mobile-menu ul").style;
+        console.log(mobileMenuStyle.height);
+        if (mobileMenuStyle.height == "0px") {
+          // mobileMenuStyle.display = "block";
+          mobileMenuStyle.height = "420px";
+        } else {
+          // mobileMenuStyle.display = "none";
+          mobileMenuStyle.height = "0px";
+        }
+      });
+    </script>
+  </body>
+</html>
